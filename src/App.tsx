@@ -15,6 +15,12 @@ const Todos = suspenseQuery<Todo>(
     </ul>
   ),
   () => <p>Loading...</p>,
+  ({ resetErrorBoundary }) => (
+    <div>
+      There was an error!
+      <button onClick={() => resetErrorBoundary()}>Try again</button>
+    </div>
+  ),
 );
 
 function App() {
